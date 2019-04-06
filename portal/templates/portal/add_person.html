@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block title %}Person Search{% endblock %}
+{% block content %}  
+<!DOCTYPE html>
+<html>
+<head>
+	<title>	Add a Person </title>
+</head>
+<body>
+		<div class="container py-2">
+		<h1> Add a Person </h1>
+		</div>
+		{% if type_message %}
+			{% if type_message == 'error' %}
+				<div class="container alert alert-danger">
+			{% else %}
+				<div class="container alert alert-success">
+			{% endif %}
+					{% if message %}<p><strong>{{ message }}</strong></p>{% endif %}
+				</div>
+		{% endif %}		
+		<div class="container">
+			<form action="{% url 'portal:add_person_data' %}" method="post">
+				{% csrf_token %}
+				<div class="form-group">
+				<p>First Name <input type="text" class="form-control" name="first_name" id="first_name"></p>
+				
+				<div class="form-group">
+				<p>Last Name <input type="text" class="form-control" name="last_name" id="last_name"></p>
+				</div>
+
+				<div class="form-group">
+				<p>Other Name <input type="text" class="form-control" name="other_name" id="other_name"></p>
+				</div>
+
+				<div class="form-group">
+				<p>Status ID <input type="text" class="form-control" name="status" id="status"></p>
+				</div>
+
+				<div class="form-group">
+				<p>ID Number <input type="text" class="form-control" name="id_number" id="id_number"></p>
+				</div>
+
+				<div class="form-group">
+				<p>Mobile <input type="text" class="form-control" name="mobile" id="mobile"></p>
+				</div>
+
+				<div class="form-group">
+				<p>Email <input type="text" class="form-control" name="email" id="email"></p>
+				</div>
+
+				<div class="form-group">
+				<p>Description <input type="textarea" class="form-control" name="description" id="description"></p>
+	   			</div>
+
+	   			<input type="submit" class="btn btn-primary" value="Add">
+   			</form>
+   		</div>
+
+
+</body>
+</html>
+
+{% endblock %}

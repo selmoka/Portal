@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}{{title}}{% endblock %}
+{% block content %}  
+  <head>
+	<title>{{title}}</title>
+</head>
+<body>
+	<div class="container my-3">
+	<h1>{{main_heading}}</h1>
+		<div class="list-group"> {% for person in results %}
+		<li class="list-group-item"> <a href = {% url 'portal:show_person' person.id %}> {{person}} </li>
+		{% endfor %}
+		</div>
+	</div>
+</body>
+</html>
+{% endblock %}

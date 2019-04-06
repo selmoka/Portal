@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Person Details{% endblock %}
+{% block content %}  
+  <div class="container alert alert-info my-3">
+  	<!-- <div class="panel panel-default panel-body"> -->
+    <!-- <div class="panel-body"> -->
+        <h1> Name: {{ person.first_name }} {{ person.last_name }} </h1>
+        <h2> Status: {{ person.status.name }} </h2>  
+      <!-- </div> -->
+  </div>
+
+{% endblock %}
